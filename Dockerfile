@@ -12,6 +12,7 @@ COPY . /app/
 # Install packages from requirements.txt
 # hadolint ignore=DL3013
 RUN pip install --no-cache-dir --upgrade setuptools wheel --use-pep517 pip &&\
+    pip install --no-cache-dir --trusted-host pypi.python.org numpy &&\
     pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
 
 ## Step 4:
